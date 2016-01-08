@@ -1,12 +1,11 @@
-'use strict';
 import React, { Component } from 'react';
-import ReactRouter, { Link } from 'react-router';
 
 class Footer extends Component {
+  static displayName = 'Footer';
   render() {
-    return(
+    return (
       <div>
-        Footer here
+        {'Footer here'}
       </div>
     );
   }
