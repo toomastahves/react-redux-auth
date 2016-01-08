@@ -1,7 +1,7 @@
 {
-  "name": "react",
+  "name": "react-router-example",
   "version": "0.0.1",
-  "description": "React starter",
+  "description": "React router example",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/toomastahves/react-webpack-starter.git"
+    "url": "git+https://github.com/toomastahves/react-router-example.git"
   },
   "keywords": [],
   "author": "Toomas Tahves",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/toomastahves/react-webpack-starter/issues"
+    "url": "https://github.com/toomastahves/react-router-example/issues"
   },
-  "homepage": "https://github.com/toomastahves/react-webpack-starter#readme",
+  "homepage": "https://github.com/toomastahves/react-router-example#readme",
   "devDependencies": {
     "babel-core": "^6.4.0",
     "babel-eslint": "^4.1.6",
