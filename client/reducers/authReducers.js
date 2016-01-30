@@ -12,14 +12,14 @@ const authReducers = (state = initialState, action) => {
     case actions.SIGNUP_REQUEST:
       return Object.assign({}, state, { fetching: true });
     case actions.SIGNUP_SUCCESS:
-      return Object.assign({}, state, { fetching: false, username: action.username });
+      return Object.assign({}, state, { fetching: false, error: '', username: action.username });
     case actions.SIGNUP_ERROR:
       return Object.assign({}, state, { fetching: false, error: action.error });
 
     case actions.LOGIN_REQUEST:
       return Object.assign({}, state, { fetching: true });
     case actions.LOGIN_SUCCESS:
-      return Object.assign({}, state, { fetching: false, username: action.username });
+      return Object.assign({}, state, { fetching: false, error: '', username: action.username });
     case actions.LOGIN_ERROR:
       return Object.assign({}, state, { fetching: false, error: action.error });
 

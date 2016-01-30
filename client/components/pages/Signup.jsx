@@ -14,6 +14,7 @@ export const Auth = (props) => {
   return (
     <div className={style.authForm}>
       <div>{'Sign up here'}</div>
+      <div>{props.error}</div>
       <form onSubmit={handleSignup.bind(this, props)}>
         <div><input name='username' /></div>
         <div><input name='password' /></div>
@@ -23,4 +24,10 @@ export const Auth = (props) => {
   );
 };
 
-export default connect()(Auth);
+const mapStateToProps = (state) => {
+  return {
+    error: state.authReducers.error
+  };
+};
+
+export default connect(mapStateToProps)(Auth);

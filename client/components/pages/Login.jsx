@@ -10,10 +10,11 @@ const handleLogin = (props, e) => {
   props.dispatch(login({ username, password }));
 };
 
-export const Auth = (props) => {
+export const Login = (props) => {
   return (
     <div className={style.authForm}>
       <div>{'Login here'}</div>
+      <div>{props.error}</div>
       <form onSubmit={handleLogin.bind(this, props)}>
         <div><input name='username' /></div>
         <div><input name='password' /></div>
@@ -23,4 +24,10 @@ export const Auth = (props) => {
   );
 };
 
-export default connect()(Auth);
+const mapStateToProps = (state) => {
+  return {
+    error: state.authReducers.error
+  };
+};
+
+export default connect(mapStateToProps)(Login);
