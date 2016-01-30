@@ -10,7 +10,7 @@ const handleSignup = (props, e) => {
   props.dispatch(signup({ username, password }));
 };
 
-export const Auth = (props) => {
+export const Signup = (props) => {
   return (
     <div className={style.authForm}>
       <div>{'Sign up here'}</div>
@@ -30,4 +30,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Auth);
+export default connect(mapStateToProps)(Signup);
