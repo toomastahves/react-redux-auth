@@ -12,7 +12,8 @@
     "es6": true
   },
   "plugins": [
-    "react"
+    "react",
+    "babel"
   ],
   "ecmaFeatures": {
     "arrowFunctions": true,
@@ -95,7 +96,7 @@
     "no-floating-decimal": 1,
     "no-implicit-coercion": 1,
     "no-implied-eval": 1,
-    "no-invalid-this": 1,
+    "no-invalid-this": 0,
     "no-iterator": 1,
     "no-labels": 1,
     "no-lone-blocks": 1,
@@ -111,7 +112,7 @@
     "no-octal-escape": 2,
     "no-octal": 2,
     "no-param-reassign": 1,
-    "no-process-env": 1,
+    "no-process-env": 0,
     "no-proto": 1,
     "no-redeclare": 1,
     "no-return-assign": 1,
@@ -163,7 +164,7 @@
     "computed-property-spacing": [1, "never"],
     "consistent-this": [1, "self"],
     "eol-last": 1,
-    "func-names": 1,
+    "func-names": 0,
     "func-style": 0,
     "id-length": 0,
     "id-match": 0,
@@ -189,13 +190,13 @@
     "no-multiple-empty-lines": [1, {"max": 2}],
     "no-negated-condition": 0,
     "no-nested-ternary": 0,
-    "no-new-object": 1,
+    "no-new-object": 0,
     "no-plusplus": 0,
     "no-restricted-syntax": 0,
     "no-spaced-func": 1,
     "no-ternary": 0,
     "no-trailing-spaces": 1,
-    "no-underscore-dangle": 1,
+    "no-underscore-dangle": 0,
     "no-unneeded-ternary": 1,
     "object-curly-spacing": [1, "always"],
     "one-var": [1, "never"],
@@ -225,7 +226,7 @@
     "constructor-super": 1,
     "generator-star-spacing": 1,
     "no-arrow-condition": 1,
-    "no-class-assign": 1,
+    "no-class-assign": 0,
     "no-const-assign": 2,
     "no-dupe-class-members": 1,
     "no-this-before-super": 2,
@@ -238,7 +239,7 @@
     "prefer-template": 1,
     "require-yield": 1,
 
-    "react/display-name": 1,
+    "react/display-name": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-boolean-value": 0,
     "react/jsx-closing-bracket-location": 1,
@@ -265,15 +266,23 @@
     "react/no-direct-mutation-state": 1,
     "react/no-is-mounted": 1,
     "react/no-multi-comp": 0,
-    "react/no-set-state": 1,
+    "react/no-set-state": 0,
     "react/no-string-refs": 1,
-    "react/no-unknown-property": 0,
+    "react/no-unknown-property": 1,
     "react/prefer-es6-class": 1,
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
     "react/require-extension": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/wrap-multilines": 1
+    "react/wrap-multilines": 1,
+
+    "babel/generator-star-spacing": 1,
+    "babel/new-cap": 1,
+    "babel/array-bracket-spacing": 0,
+    "babel/object-curly-spacing": 0,
+    "babel/object-shorthand": 1,
+    "babel/arrow-parens": 0,
+    "babel/no-await-in-loop": 1
   }
 }
