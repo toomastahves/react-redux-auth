@@ -40,6 +40,7 @@
     "nock": "^7.0.2",
     "nodemon": "^1.8.1",
     "react-addons-test-utils": "^0.14.6",
+    "redux-devtools": "^3.0.2",
     "redux-mock-store": "0.0.6"
   },
   "dependencies": {
@@ -58,6 +59,7 @@
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "helmet": "^1.1.0",
+    "history": "^1.17.0",
     "isomorphic-fetch": "^2.2.1",
     "jwt-simple": "^0.4.1",
     "mongoose": "^4.3.7",

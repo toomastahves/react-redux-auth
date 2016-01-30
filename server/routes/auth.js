@@ -1,6 +1,6 @@
 import { Router } from 'express';
 const router = new Router();
-import { signUp, login } from '../controllers/auth.controller';
+import { signup, login } from '../controllers/auth.controller';
 
 router.post('/signup', (req, res) => {
   const user = {
@@ -10,7 +10,7 @@ router.post('/signup', (req, res) => {
   if(!user.email || !user.password) {
     res.json({ error: 'Empty email or password not allowed.' });
   } else {
-    signUp(req, res, user);
+    signup(req, res, user);
   }
 });
 

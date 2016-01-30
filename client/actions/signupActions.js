@@ -23,7 +23,7 @@ export const signupError = (error) => {
   };
 };
 
-export const signUp = (user) => {
+export const signup = (user) => {
   return dispatch => {
     dispatch(signupRequest());
     return fetch(`${AUTH_URI}/signup`, {

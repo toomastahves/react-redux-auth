@@ -2,7 +2,7 @@ import User from '../models/User';
 import { comparePasswords } from '../helpers/salt';
 import { createToken } from '../helpers/token';
 
-const signUp = (req, res, user) => {
+const signup = (req, res, user) => {
   const newUser = new User({
     email: user.email,
     password: user.password
@@ -34,23 +34,20 @@ const login = (req, res, user) => {
   User.findOne({ email: enteringUser.email }, (err, realUser) => {
     if(err) {
       res.send({ error: 'Error while searching user.' });
-    }
-    if(realUser) {
+    } else if(realUser) {
       comparePasswords(enteringUser.password, realUser.password, (result) => {
         if(result) {
           createToken(realUser, (token) => {
-            res.send({
-              message: 'Successfully logged in.',
-              email: realUser.email,
-              token
-            });
+            res.send({ email: realUser.email, token });
           });
         } else {
           res.send({ error: 'Wrong password' });
         }
       });
+    } else {
+      res.send({ error: 'User not found.' });
     }
   });
 };
 
-export { signUp, login };
+export { signup, login };
