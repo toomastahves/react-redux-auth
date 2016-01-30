@@ -26,7 +26,7 @@ export const loginError = (error) => {
 export const login = (user) => {
   return dispatch => {
     dispatch(loginRequest());
-    return fetch(`${AUTH_URI}/login`, {
+    return fetch(`${AUTH_URI}/auth/login`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

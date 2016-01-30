@@ -1,2 +1,1 @@
-export const AUTH_URI = `http://localhost:1337/auth`;
-export const PETS_URI = `http://localhost:1337/api/pets`;
+export const AUTH_URI = process.env.AUTH_URI || `http://localhost:1337`;

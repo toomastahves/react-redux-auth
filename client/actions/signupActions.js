@@ -26,7 +26,7 @@ export const signupError = (error) => {
 export const signup = (user) => {
   return dispatch => {
     dispatch(signupRequest());
-    return fetch(`${AUTH_URI}/signup`, {
+    return fetch(`${AUTH_URI}/auth/signup`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
