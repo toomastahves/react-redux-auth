@@ -1,11 +1,69 @@
 body {
   margin: 0;
   background-color: rgb(196, 209, 228);
+  font-size: 1.4em;
 }
-.center {
-  position: absolute;
-  background-color: rgb(166, 230, 158);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+
+.container {
+
+  margin: auto;
+  max-width: 960px;
+  background-color: rgb(186, 107, 172);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: rgb(169, 199, 126);
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.content {
+  min-height: 70vh;
+  background-color: rgb(165, 227, 203);
+  display: flex;
+}
+
+.menu {
+  background-color: rgb(237, 213, 202);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 5px;
+  margin: 5px;
+}
+.menuItem {
+  text-decoration: none;
+  display: flex;
+  padding: 5px;
+}
+.menuItem:hover {
+  background-color: rgb(155, 180, 231);
+  transition: 0.3s;
+}
+
+.main {
+  flex: 3;
+  background-color: rgb(235, 164, 196);
+  padding: 20px;
+  margin: 5px;
+}
+
+.footer {
+  background-color: rgb(221, 207, 255);
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  .content {
+    flex-direction: column;
+  }
+  .menu {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
