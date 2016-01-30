@@ -8,24 +8,20 @@ const signUp = (req, res, user) => {
     password: user.password
   });
   User.findOne({ email: newUser.email }, (err, alreadyExists) => {
-    if(!err) {
-      if(alreadyExists) {
-        res.send({ message: 'user already exists ' });
-      } else {
-        newUser.save((err2, savedUser) => {
-          if(!err2) {
-            createToken(savedUser, (token) => {
-              res.send({
-                message: 'user saved',
-                email: savedUser.email,
-                token
-              });
-            });
-          } else {
-            res.send(err2);
-          }
-        });
-      }
+    if(err) {
+      res.send({ error: 'Error while searching for username availability.' });
+    } else if(alreadyExists) {
+      res.send({ error: 'Username already taken.' });
+    } else {
+      newUser.save((err2, savedUser) => {
+        if(err2) {
+          res.send({ error: 'Error while creating user.' });
+        } else {
+          createToken(savedUser, (token) => {
+            res.send({ email: savedUser.email, token });
+          });
+        }
+      });
     }
   });
 };
@@ -37,20 +33,20 @@ const login = (req, res, user) => {
   });
   User.findOne({ email: enteringUser.email }, (err, realUser) => {
     if(err) {
-      res.send(err);
+      res.send({ error: 'Error while searching user.' });
     }
     if(realUser) {
       comparePasswords(enteringUser.password, realUser.password, (result) => {
         if(result) {
           createToken(realUser, (token) => {
             res.send({
-              message: 'logged in',
+              message: 'Successfully logged in.',
               email: realUser.email,
               token
             });
           });
         } else {
-          res.send({ message: 'nok' });
+          res.send({ error: 'Wrong password' });
         }
       });
     }

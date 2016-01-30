@@ -8,7 +8,7 @@ import helmet from 'helmet';
 import errorhandler from 'errorhandler';
 import webpack from './webpack';
 
-const commonMiddleware = (app) => {
+const expressMiddleware = (app) => {
   app.use(express.static('public'));
   app.use(favicon('public/favicon.ico'));
   app.use(logger('dev'));
@@ -20,9 +20,9 @@ const commonMiddleware = (app) => {
   app.use(helmet.hidePoweredBy({ setTo: 'Fantasy Unicorns' }));
 
   if(process.env.NODE_ENV !== 'production') {
-    // webpack(app);
+    webpack(app);
     app.use(errorhandler());
   }
 };
 
-export default commonMiddleware;
+export default expressMiddleware;

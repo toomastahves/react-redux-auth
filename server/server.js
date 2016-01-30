@@ -1,11 +1,11 @@
 import express from 'express';
 import mongodb from './config/mongodb';
-import middleware from './middleware/common';
+import expressMiddleware from './middleware/';
 import routes from './routes/';
 
 const app = express();
 mongodb();
-middleware(app);
+expressMiddleware(app);
 routes(app);
 
 const port = process.env.PORT || 1337;

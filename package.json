@@ -1,7 +1,7 @@
 {
-  "name": "react-starter",
+  "name": "react-redux-auth",
   "version": "0.0.1",
-  "description": "React starter",
+  "description": "React Redux auth example",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/index.js",
@@ -13,18 +13,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/toomastahves/react-starter.git"
+    "url": "git+https://github.com/toomastahves/react-redux-auth.git"
   },
   "keywords": [],
   "author": "Toomas Tahves",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/toomastahves/react-starter/issues"
+    "url": "https://github.com/toomastahves/react-redux-auth/issues"
   },
   "engines": {
     "node": "5.5.0"
   },
-  "homepage": "https://github.com/toomastahves/react-starter#readme",
+  "homepage": "https://github.com/toomastahves/react-redux-auth#readme",
   "devDependencies": {
     "babel-eslint": "^4.1.6",
     "chai": "^3.4.1",
@@ -54,21 +54,19 @@
     "compression": "^1.6.1",
     "cookie-parser": "^1.4.1",
     "css-loader": "^0.23.1",
-    "csurf": "^1.8.3",
     "errorhandler": "^1.4.3",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "helmet": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
-    "jsonwebtoken": "^5.5.4",
     "jwt-simple": "^0.4.1",
     "mongoose": "^4.3.7",
     "morgan": "^1.6.1",
-    "passport": "^0.3.2",
-    "passport-local": "^1.0.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-redux": "^4.0.6",
+    "react-router": "^2.0.0-rc5",
+    "react-router-redux": "^2.1.0",
     "redux": "^3.0.6",
     "redux-thunk": "^1.0.3",
     "response-time": "^2.3.1",

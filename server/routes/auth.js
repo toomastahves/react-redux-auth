@@ -8,7 +8,7 @@ router.post('/signup', (req, res) => {
     password: req.body.password
   };
   if(!user.email || !user.password) {
-    res.json({ message: 'Empty email or password not allowed.' });
+    res.json({ error: 'Empty email or password not allowed.' });
   } else {
     signUp(req, res, user);
   }
@@ -20,7 +20,7 @@ router.post('/login', (req, res) => {
     password: req.body.password
   };
   if(!user.email || !user.password) {
-    res.json({ message: 'Empty email or password not allowed.' });
+    res.json({ error: 'Empty email or password not allowed.' });
   } else {
     login(req, res, user);
   }
