@@ -46,7 +46,7 @@ export const login = (user) => {
 export const loginJWT = (token) => {
   return dispatch => {
     dispatch(loginRequest());
-    return fetch(`${AUTH_URI}/loginjwt`, {
+    return fetch(`${AUTH_URI}/auth/loginjwt`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

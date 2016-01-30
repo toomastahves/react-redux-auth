@@ -1,1 +1,1 @@
-export const AUTH_URI = process.env.AUTH_URI || `http://localhost:1337`;
+export const AUTH_URI = `${window.location.origin}`;
