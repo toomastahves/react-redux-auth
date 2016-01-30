@@ -6,7 +6,7 @@ export const Menu = () => {
     <div className={style.menu}>
       <a className={style.menuItem} href='#home'>{'Home'}</a>
       <a className={style.menuItem} href='#pets'>{'Pets'}</a>
-      <a className={style.menuItem} href='#auth'>{'Auth'}</a>
+      <a className={style.menuItem} href='#users'>{'Users'}</a>
     </div>
   );
 };

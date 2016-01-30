@@ -1,6 +1,6 @@
 import User from '../models/User';
 import { comparePasswords } from '../helpers/salt';
-import { createToken } from '../helpers/token';
+import { createToken, decodeToken } from '../helpers/token';
 
 const signup = (req, res, user) => {
   const newUser = new User({
@@ -50,4 +50,19 @@ const login = (req, res, user) => {
   });
 };
 
-export { signup, login };
+const loginjwt = (req, res, token) => {
+  decodeToken(token, (decoded) => {
+    const _id = decoded.sub;
+    User.findOne({ _id }, (err, user) => {
+      if(err) {
+        res.send({ error: 'Error while searching user.' });
+      } else if(user) {
+        res.send({ email: user.email, token });
+      } else {
+        res.send({ error: 'User not found.' });
+      }
+    });
+  });
+};
+
+export { signup, login, loginjwt };

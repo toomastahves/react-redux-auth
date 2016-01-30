@@ -33,9 +33,26 @@ export const login = (user) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        email: user.email,
+        email: user.username,
         password: user.password
       })
+    })
+    .then(response => response.json())
+    .then(data => dispatch(loginResponse(data)))
+    .catch(error => dispatch(loginError(error)));
+  };
+};
+
+export const loginJWT = (token) => {
+  return dispatch => {
+    dispatch(loginRequest());
+    return fetch(`${AUTH_URI}/loginjwt`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-access-token': token.token
+      }
     })
     .then(response => response.json())
     .then(data => dispatch(loginResponse(data)))

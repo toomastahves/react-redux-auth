@@ -4,12 +4,12 @@ import Menu from './menu/';
 import Header from './header/';
 import Footer from './footer/';
 import { connect } from 'react-redux';
-import { routeActions } from 'react-router-redux';
+import { loginJWT } from '../actions/loginActions';
 
 export const App = (props) => {
   return (
     <div className={style.container}>
-      <div className={style.header}><Header /></div>
+      <Header />
       <div className={style.content}>
         <Menu />
         <div className={style.main}>
@@ -25,4 +25,12 @@ App.propTypes = {
   children: PropTypes.object.isRequired
 };
 
-export default connect(null, routeActions)(App);
+const mapDispatchToProps = (dispatch) => {
+  const token = localStorage.getItem('jwt');
+  if(token) {
+    dispatch(loginJWT({ token }));
+  }
+  return {};
+};
+
+export default connect(null, mapDispatchToProps)(App);

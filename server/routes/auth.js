@@ -1,6 +1,6 @@
 import { Router } from 'express';
 const router = new Router();
-import { signup, login } from '../controllers/auth.controller';
+import { signup, login, loginjwt } from '../controllers/auth.controller';
 
 router.post('/signup', (req, res) => {
   const user = {
@@ -23,6 +23,15 @@ router.post('/login', (req, res) => {
     res.json({ error: 'Empty email or password not allowed.' });
   } else {
     login(req, res, user);
+  }
+});
+
+router.post('/loginjwt', (req, res) => {
+  const token = req.headers['x-access-token'];
+  if(token) {
+    loginjwt(req, res, token);
+  } else {
+    res.json({ error: 'Token not provided.' });
   }
 });
 

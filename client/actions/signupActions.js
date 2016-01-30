@@ -33,7 +33,7 @@ export const signup = (user) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        email: user.email,
+        email: user.username,
         password: user.password
       })
     })

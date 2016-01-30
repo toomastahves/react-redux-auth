@@ -1,2 +1,2 @@
-export const AUTH_URI = `${window.location.href}auth`;
-export const PETS_URI = `${window.location.href}api/pets`;
+export const AUTH_URI = `http://localhost:1337/auth`;
+export const PETS_URI = `http://localhost:1337/api/pets`;
